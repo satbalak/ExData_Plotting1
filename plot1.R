@@ -32,5 +32,8 @@ plot1 <- function() {
     d1 <<- mydt
     
     # Now, we have data in the format we want and can go on to plotting
+    png(filename="plot1.png", width=480, height=480)
+    hist(d1$Global_active_power, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
+    dev.off()
 
 }
