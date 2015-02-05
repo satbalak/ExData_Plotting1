@@ -29,7 +29,7 @@ plot2 <- function() {
     d$DateTime <- dmy_hms(paste(d$Date, d$Time))
     mydt <- d %>% select(-Date, -Time) %>%
             setcolorder(c(8,1:7))
-    d1 <<- mydt
+    
     
     # Now, we have data in the format we want and can go on to plotting
     png(filename="plot2.png", width=480, height=480)
