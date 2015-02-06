@@ -1,4 +1,4 @@
-plot1 <- function() {
+plot3 <- function() {
     library(data.table)
     library(lubridate)
     library(dplyr)
@@ -32,8 +32,14 @@ plot1 <- function() {
     
     
     # Now, we have data in the format we want and can go on to plotting
-    png(filename="plot1.png", width=480, height=480)
-    hist(mydt$Global_active_power, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
+    png(filename="plot3.png", width=480, height=480)
+    with(mydt, plot(DateTime, Sub_metering_1, type="n", xlab=""
+                  , ylab="Energy sub metering"))
+    lines(mydt$DateTime, d1$Sub_metering_1, col="black")
+    lines(mydt$DateTime, d1$Sub_metering_2, col="red")
+    lines(mydt$DateTime, d1$Sub_metering_3, col="blue")
+    legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3")
+           , lty=c(1,1), col=c("black","red","blue"))
     dev.off()
 
 }

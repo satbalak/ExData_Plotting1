@@ -33,7 +33,7 @@ plot2 <- function() {
     
     # Now, we have data in the format we want and can go on to plotting
     png(filename="plot2.png", width=480, height=480)
-    with(d1, plot(DateTime, Global_active_power, type="l", xlab="", ylab="Global Active Power (kilowatts)"))
+    with(mydt, plot(DateTime, Global_active_power, type="l", xlab="", ylab="Global Active Power (kilowatts)"))
     dev.off()
 
 }
